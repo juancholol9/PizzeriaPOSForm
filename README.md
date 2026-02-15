@@ -1,21 +1,15 @@
-# Laboratorio de Evaluación de Candidatos – Parte 1
+# Laboratorio de Evaluación de Candidatos – Parte 2
 
 Desarrollado por **Juan Mejia**
 
+---
+
 ## Descripción del Proyecto
 
-Este proyecto consiste en el desarrollo de una **API REST para un sistema POS de una pizzería**.
+Este repositorio contiene el desarrollo del **Frontend del sistema POS para una pizzería**.
 
-La API permite gestionar:
-
-* Productos
-* Clientes
-* Direcciones
-* Pedidos
-* Colaboradores
-* Autenticación de usuarios
-
-El repositorio incluye todos los commits realizados durante el desarrollo.
+**Importante:**
+Antes de ejecutar este proyecto, debes haber configurado y ejecutado correctamente la **Parte 1 (API)**, ya que este frontend depende completamente de ella.
 
 ---
 
@@ -24,67 +18,85 @@ El repositorio incluye todos los commits realizados durante el desarrollo.
 ### Clonar el repositorio
 
 ```bash
-git clone https://github.com/juancholol9/PizzeriaPOS.git
+git clone https://github.com/juancholol9/PizzeriaPOSForm.git
 ```
 
 ---
 
 ### Abrir la solución
 
-1. Ingresar a la carpeta `PizzeriaPOS`
+1. Ingresar a la carpeta del proyecto
 2. Abrir el archivo:
 
 ```
-api-pos-pizza.sln
+PosPizza.sln
 ```
 
 Esto abrirá el proyecto en Visual Studio.
 
 ---
 
-### Configurar la Base de Datos
+### Verificar que la API esté en ejecución
 
-Antes de ejecutar la API:
+Antes de ejecutar el frontend:
 
-1. Ir a la carpeta `esquema`
-2. Abrir el archivo `sql.txt`
-3. Ejecutar su contenido en SQL Server
+* Asegúrate de que la **API (Parte 1)** esté corriendo
+* Copia el puerto donde se esté ejecutando, por ejemplo:
 
-Esto creará la base de datos y todas las tablas necesarias.
+```
+http://localhost:5099/api
+```
 
 ---
 
-### Crear un Colaborador
+### Configurar la URL base de la API
 
-La API cuenta con autenticación, por lo tanto:
+1. Ir al archivo:
 
-* Es necesario crear **al menos un colaborador**
-* Esto permitirá generar credenciales válidas para realizar peticiones autenticadas
+```
+Controllers/AuthService.cs
+```
+
+2. Buscar la variable:
+
+```csharp
+_baseUrl
+```
+
+3. Pegar la URL de la API (incluyendo el puerto correcto)
+
+Ejemplo:
+
+```csharp
+private string _baseUrl = "http://localhost:5099/api";
+```
 
 ---
 
 ### Ejecutar el Proyecto
 
-1. Ejecutar la API desde Visual Studio
-2. Probar los endpoints usando Swagger o Postman
+Una vez configurado correctamente:
+
+* Ejecutar el proyecto desde Visual Studio
+* Iniciar sesión con el **usuario colaborador** creado en la Parte 1
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 * .NET
-* Entity Framework Core
-* SQL Server
+* Consumo de API REST
 * Autenticación basada en tokens
-* Swagger
+* Arquitectura por capas
 
 ---
 
 ## Notas Importantes
 
-* Verificar la cadena de conexión en `appsettings.json`
-* Asegurarse de que SQL Server esté en ejecución antes de iniciar la API
+* La API debe estar ejecutándose antes de iniciar el frontend
+* Verifica que el puerto configurado coincida exactamente con el puerto donde corre la API
+* Asegúrate de haber creado un colaborador en la base de datos para poder iniciar sesión
 
 ---
 
-✅ Proyecto desarrollado como parte de un laboratorio técnico para evaluación de candidatos.
+Proyecto desarrollado como parte de un laboratorio técnico para evaluación de candidatos.
