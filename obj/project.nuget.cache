@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Gp7boYeRRRU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\juanr\\source\\repos\\PosPizza\\PosPizza\\PosPizza.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\juanr\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
